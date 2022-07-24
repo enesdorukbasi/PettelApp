@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Pettel.Pages.QAPages.AddAnswerPage" BackgroundColor="White">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Cevap Yaz" TextColor="DarkOrange" VerticalOptions="Center" HorizontalOptions="Center" FontSize="Title" FontAttributes="Bold"/>
+            <Label x:Name="lblQuestionId" IsVisible="false"/>
+
+            <Editor x:Name="txtContent" Placeholder="İçerik" Keyboard="Plain" AutoSize="TextChanges" TextColor="White" BackgroundColor="Orange" Opacity="0.8" PlaceholderColor="White"/>
+
+            <Button x:Name="btnSave" Text="Paylaş" Clicked="btnSave_Clicked" BackgroundColor="DarkOrange" CornerRadius="20" TextColor="White"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

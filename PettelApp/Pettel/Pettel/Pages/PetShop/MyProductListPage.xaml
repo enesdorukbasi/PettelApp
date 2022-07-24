@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Pettel.Pages.PetShop.MyProductListPage" BackgroundColor="White">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Ara" IconImageSource="search.png" Order="Primary" Priority="0" x:Name="ToolBarItemSearch" Clicked="ToolBarItemSearch_Clicked"/>
+        <ToolbarItem Text="Filtre" IconImageSource="filter.png" Order="Primary" Priority="0" x:Name="ToolBarItemFilter" Clicked="ToolBarItemFilter_Clicked"/>
+        <ToolbarItem Text="Kaydettiklerim" Priority="0" Order="Secondary"/>
+        <ToolbarItem x:Name="btnCreateProduct" Text="Ürün Ekle" Priority="1" Order="Secondary" Clicked="btnCreateProduct_Clicked"/>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <StackLayout>
+            <SearchBar x:Name="ProductSearchBar" Placeholder="Ürün Ara" VerticalOptions="Center" IsVisible="false" TextColor="Orange" PlaceholderColor="Orange" 
+                       SearchButtonPressed="ProductSearchBar_SearchButtonPressed" TextChanged="ProductSearchBar_TextChanged"/>
+
+            <Label x:Name="lblMessage" VerticalOptions="Center" HorizontalOptions="Center" TextColor="DarkOrange" FontAttributes="Bold" FontSize="Title" IsVisible="false"/>
+
+            <ListView x:Name="lstProduct" ItemsSource="{Binding myProducts}" HasUnevenRows="True" ItemTapped="lstProduct_ItemTapped" IsPullToRefreshEnabled="True">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal" BackgroundColor="Orange" Margin="5">
+                                <Frame Padding="0" VerticalOptions="Center" Margin="10" HeightRequest="65" WidthRequest="65" BackgroundColor="Wheat" CornerRadius="200" BorderColor="White" IsClippedToBounds="True">
+                                    <Frame.Content>
+                                        <Image Source="{Binding Image1}" Aspect="Fill"/>
+                                    </Frame.Content>
+                                </Frame>
+                                <StackLayout Orientation="Vertical" Padding="5" Margin="5">
+                                    <Label Text="{Binding ProductName}" FontSize="Medium" TextColor="White"/>
+                                    <StackLayout Orientation="Horizontal" HorizontalOptions="StartAndExpand">
+                                        <Label Text="{Binding PetType}" FontSize="Body" TextColor="White" HorizontalOptions="Center" Margin="5"/>
+                                        <Label Text="{Binding MainCategoryName}" FontSize="Body" TextColor="White" HorizontalOptions="End" Margin="5"/>
+                                    </StackLayout>
+                                </StackLayout>
+                                <StackLayout Orientation="Vertical" VerticalOptions="Center" Margin="10,0,0,0">
+                                    <ImageButton Source="edit.png" x:Name="btnEdit" Clicked="btnEdit_Clicked" WidthRequest="30" HeightRequest="30" BackgroundColor="Orange"  CommandParameter="{Binding Id}"/>
+                                    <ImageButton Source="delete.png" x:Name="btnDelete" Clicked="btnDelete_Clicked" WidthRequest="30" HeightRequest="30" BackgroundColor="Orange"  CommandParameter="{Binding Id}"/>
+                                </StackLayout>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

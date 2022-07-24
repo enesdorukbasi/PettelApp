@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "349181039722",
+    "firebase_url": "https://pettelappdb-default-rtdb.firebaseio.com",
+    "project_id": "pettelappdb",
+    "storage_bucket": "pettelappdb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:349181039722:android:b2280b907b711513b7e613",
+        "android_client_info": {
+          "package_name": "com.companyname.pettel"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "349181039722-ft8a9u7g0o76qplgdlnl9slmuphhht2r.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDFXOkzB54UhQt-_ygR2FGNF-brEz48QU0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "349181039722-ft8a9u7g0o76qplgdlnl9slmuphhht2r.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

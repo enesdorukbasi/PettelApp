@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Pettel.Pages.BasketAndSalesPages.MyAddressListPage" BackgroundColor="White">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Ekle" IconImageSource="add.png" Order="Primary" Priority="0" x:Name="ToolBarItemCreateAddress" Clicked="ToolBarItemCreateAddress_Clicked"/>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical">
+            <Label Text="Adreslerim" TextColor="Orange" FontSize="Title" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" />
+
+            <Label x:Name="lblMessage" VerticalOptions="Center" HorizontalOptions="Center" TextColor="DarkOrange" FontAttributes="Bold" FontSize="Title" IsVisible="false"/>
+
+            <ListView x:Name="lstAddresses" ItemsSource="{Binding myAddresses}" HasUnevenRows="True" IsPullToRefreshEnabled="True">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal" BackgroundColor="Orange" Margin="5">
+                                <StackLayout Orientation="Vertical" Padding="5" Margin="5">
+                                    <Label Text="{Binding AddressTitle}" FontSize="Medium" TextColor="White"/>
+                                    <StackLayout Orientation="Horizontal" HorizontalOptions="StartAndExpand">
+                                        <Label Text="{Binding Province}" FontSize="Body" TextColor="White" HorizontalOptions="Start" Margin="5"/>
+                                        <Label Text="{Binding District}" FontSize="Body" TextColor="White" HorizontalOptions="Center" Margin="5"/>
+                                    </StackLayout>
+                                    <Label Text="{Binding FullAddress}" FontSize="Body" TextColor="White" HorizontalOptions="Start" Margin="5"/>
+                                </StackLayout>
+                                <StackLayout Orientation="Vertical" VerticalOptions="Center" Margin="10,0,0,0">
+                                    <ImageButton Source="delete.png" x:Name="btnDelete" Clicked="btnDelete_Clicked" WidthRequest="30" HeightRequest="30" BackgroundColor="Orange"  CommandParameter="{Binding Id}"/>
+                                </StackLayout>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

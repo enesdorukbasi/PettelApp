@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Pettel.Pages.ServicesPages.ServicesListPage" BackgroundColor="White">
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical" VerticalOptions="CenterAndExpand" Margin="10">
+            <Frame x:Name="btnStore" BackgroundColor="Orange" Grid.Row="0" CornerRadius="20" HasShadow="true" OutlineColor= "DarkOrange" Margin="25" VerticalOptions="CenterAndExpand">
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="Store_Tapped"/>
+                </Frame.GestureRecognizers>
+
+                <Label Text="Mağaza" TextColor="White" FontSize="20" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="Center"/>
+            </Frame>
+
+            <Frame x:Name="btnVet" BackgroundColor="Orange" Grid.Row="1" CornerRadius="20"   HasShadow="true" OutlineColor= "DarkOrange" Margin="25" VerticalOptions="CenterAndExpand">
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="Vet_Tapped"/>
+                </Frame.GestureRecognizers>
+
+                <Label Text="Veteriner" TextColor="White" FontSize="20" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="Center"/>
+            </Frame>
+
+            <Frame x:Name="btnPetTravel" BackgroundColor="Orange" Grid.Row="2" CornerRadius="20"   HasShadow="true" OutlineColor= "DarkOrange" Margin="25" IsVisible="false">
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="Store_Tapped"/>
+                </Frame.GestureRecognizers>
+
+                <Label Text="Gezi" TextColor="White" FontSize="20" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="Center"/>
+            </Frame>
+
+            <Frame x:Name="btnPetHotel" BackgroundColor="Orange" Grid.Row="3" CornerRadius="20"   HasShadow="true" OutlineColor= "DarkOrange" Margin="25" IsVisible="false">
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="Store_Tapped"/>
+                </Frame.GestureRecognizers>
+
+                <Label Text="Otel" TextColor="White" FontSize="20" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="Center"/>
+            </Frame>
+
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

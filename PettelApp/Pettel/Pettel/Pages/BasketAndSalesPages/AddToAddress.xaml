@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns:popup="http://rotorgames.com"
+             xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="Pettel.Pages.BasketAndSalesPages.AddToAddress" BackgroundColor="White">
+    <ContentPage.Content>
+        <StackLayout Margin="10" VerticalOptions="Center">
+            <Label Text="Adres Ekle" VerticalOptions="Center" HorizontalOptions="Center" TextColor="DarkOrange"
+               FontSize="Title" FontAttributes="Bold" Margin="10"/>
+
+            <Entry x:Name="txtTitle" Placeholder="Adres Başlığı" TextColor="White" BackgroundColor="Orange" Opacity="0.8" PlaceholderColor="White"/>
+            
+            <Label x:Name="lblProvince" TextColor="Orange" IsVisible="false"/>
+            <Label x:Name="lblDistrict" TextColor="Orange" IsVisible="false"/>
+            <Label x:Name="lblFullAddress" TextColor="Orange" IsVisible="false"/>
+            
+            <Picker x:Name="pckProvince" TextColor="White" TitleColor="White" BackgroundColor="Orange" WidthRequest="150" Title="İl"/>
+            <Picker x:Name="pckDistrict" TextColor="White" TitleColor="White" BackgroundColor="Orange" WidthRequest="150" Title="İlçe"/>
+            <Editor x:Name="txtFullAddress" Placeholder="Tam Adres" AutoSize="TextChanges" Keyboard="Plain" TextColor="White" BackgroundColor="Orange" Opacity="0.8" PlaceholderColor="White"/>
+
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                <Button x:Name="btnSave" Text="Kaydet" Clicked="btnSave_Clicked" BackgroundColor="Orange" />
+                <Button x:Name="btnMoveTheMap" Text="Konumumu Kullan" Clicked="btnMoveTheMap_Clicked" BackgroundColor="Orange"/>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

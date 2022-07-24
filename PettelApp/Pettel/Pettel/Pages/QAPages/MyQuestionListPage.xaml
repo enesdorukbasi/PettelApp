@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Pettel.Pages.QAPages.MyQuestionListPage" BackgroundColor="White">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Ara" IconImageSource="search.png" Order="Primary" Priority="0" x:Name="ToolBarItemSearch" Clicked="ToolBarItemSearch_Clicked"/>
+        <ToolbarItem Text="Kaydettiklerim" Priority="0" Order="Secondary"/>
+        <ToolbarItem x:Name="btnCreateQuestion" Text="İlan Ekle" Priority="1" Order="Secondary" Clicked="btnCreateQuestion_Clicked"/>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical">
+            <Label Text="Sorularım" TextColor="Orange" FontSize="Title" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" />
+
+            <SearchBar x:Name="QuestionSearch" Placeholder="Soru Ara" VerticalOptions="Center" IsVisible="false" TextColor="Orange" PlaceholderColor="Orange" SearchButtonPressed="QuestionSearch_SearchButtonPressed" TextChanged="QuestionSearch_TextChanged"/>
+            <Label x:Name="lblMessage" VerticalOptions="Center" HorizontalOptions="CenterAndExpand" TextColor="DarkOrange" FontAttributes="Bold" FontSize="Title" IsVisible="false"/>
+
+            <ListView x:Name="lstQuestion" ItemsSource="{Binding myQuestions}" HasUnevenRows="True" ItemTapped="lstQuestion_ItemTapped" IsPullToRefreshEnabled="True">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal" BackgroundColor="Orange" Margin="5">
+                                <StackLayout Orientation="Vertical" BackgroundColor="Orange" Margin="5">
+                                    <Label Text="{Binding Title}" FontSize="Title" TextColor="White"/>
+                                    <StackLayout Orientation="Horizontal" HorizontalOptions="StartAndExpand">
+                                        <Label Text="{Binding PetType}" FontSize="Medium" TextColor="White" HorizontalOptions="Start" Margin="5"/>
+                                        <Label Text="{Binding Datetime}" FontSize="Medium" TextColor="White" HorizontalOptions="Center" Margin="5"/>
+                                        <Label Text="{Binding Status}" FontSize="Medium" TextColor="White" HorizontalOptions="End" Margin="5"/>
+                                    </StackLayout>
+                                </StackLayout>
+                                <StackLayout Orientation="Vertical" VerticalOptions="Center" Margin="10,0,0,0">
+                                    <ImageButton Source="edit.png" x:Name="btnEdit" Clicked="btnEdit_Clicked" WidthRequest="30" HeightRequest="30" BackgroundColor="Orange"  CommandParameter="{Binding Id}"/>
+                                    <ImageButton Source="delete.png" x:Name="btnDelete" Clicked="btnDelete_Clicked" WidthRequest="30" HeightRequest="30" BackgroundColor="Orange"  CommandParameter="{Binding Id}"/>
+                                </StackLayout>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

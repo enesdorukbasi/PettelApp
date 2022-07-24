@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Shell xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:Advert="clr-namespace:Pettel.Pages.AdvertPages"
+             xmlns:Emergency="clr-namespace:Pettel.Pages.EmergencyPages"
+             xmlns:QA="clr-namespace:Pettel.Pages.QAPages"
+             xmlns:Services="clr-namespace:Pettel.Pages.ServicesPages"
+             xmlns:profile="clr-namespace:Pettel.Pages.UserPages"
+             xmlns:products="clr-namespace:Pettel.Pages.PetShop"
+             xmlns:vetetirener="clr-namespace:Pettel.Pages.VetetirenerPages"
+             x:Class="Pettel.Pages.Interfaces.BottomTabs" BackgroundColor="White">
+    <Shell.Resources>
+        <ResourceDictionary>
+            <Style x:Key="BaseStyle" TargetType="Element">
+                <Setter Property="Shell.BackgroundColor" Value="Orange"/>
+                <Setter Property="Shell.ForegroundColor" Value="White"/>
+                <Setter Property="Shell.TitleColor" Value="White"/>
+            </Style>
+            <Style TargetType="TabBar" BasedOn="{StaticResource BaseStyle}">
+                <Setter Property="Shell.ForegroundColor" Value="White"/>
+                <Setter Property="Shell.TitleColor" Value="White"/>
+            </Style>
+        </ResourceDictionary>
+    </Shell.Resources>
+    <TabBar>
+        <Tab Title="Yuva İlanları" Icon="paw.png">
+            <ShellContent>
+                <Advert:AdvertListPage  Title="Pettel"/>
+            </ShellContent>
+        </Tab>
+        <Tab Title="Acil Durumlar" Icon="emergency.png" >
+            <ShellContent>
+                <Emergency:EmergencyListPage Title="Pettel"/>
+            </ShellContent>
+        </Tab>
+        <Tab Title="Soru/Cevap" Icon="question_answer.png">
+            <ShellContent>
+                <QA:QAListPage Title="Pettel" />
+            </ShellContent>
+        </Tab>
+        
+        <Tab Title="Hizmetler" Icon="services.png" >
+            <ShellContent>
+                <Services:ServicesListPage Title="Pettel"/>
+            </ShellContent>
+        </Tab>
+
+        <Tab Title="Profil" Icon="profile.png">
+            <ShellContent>
+                <profile:ProfilePage Title="Pettel"/>
+            </ShellContent>
+        </Tab>
+    </TabBar>
+</Shell>

@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Pettel.Pages.UserPages.LoginUserPage" BackgroundColor="White">
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="Center" Margin="20">
+            <Label Text="Kullanıcı Giriş" HorizontalOptions="Center" FontAttributes="Bold"  FontSize="Title" TextColor="DarkOrange"/>
+
+            <Entry x:Name="txtEmail" Placeholder="E-Mail Giriniz" Keyboard="Email" TextColor="White" PlaceholderColor="White" BackgroundColor="Orange" Opacity="0.8"/>
+            <Entry x:Name="txtPassword" Placeholder="Parola Giriniz" TextColor="White" PlaceholderColor="White" IsPassword="True" BackgroundColor="Orange" Opacity="0.8"/>
+
+            <Button x:Name="btnLogin" Text="Giriş" Clicked="btnLogin_Clicked" BackgroundColor="DarkOrange" TextColor="White" FontAttributes="Bold" CornerRadius="15"/>
+
+            <StackLayout Orientation="Horizontal">
+
+                <Label Text="Kayıt olmak ister misin? " Margin="0" TextColor="Gray" FontSize="Default"/>
+                <Label x:Name="lblRegisterPage" Text="Kayıt Ol" TextColor="DarkOrange" FontAttributes="Bold">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="btnRegisterPage_Clicked"/>
+                    </Label.GestureRecognizers>
+                </Label>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Margin="10">
+                <Button x:Name="btnGmailSignIn" Text="Gmail Giriş" Clicked="btnGmailSignIn_Clicked" BackgroundColor="Red" TextColor="White" FontAttributes="Bold" CornerRadius="15"/>
+                <Button x:Name="btnFacebookSignIn" Text="Facebook Giriş" Clicked="btnFacebookSignIn_Clicked" BackgroundColor="Blue" TextColor="White" FontAttributes="Bold" CornerRadius="15"/>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

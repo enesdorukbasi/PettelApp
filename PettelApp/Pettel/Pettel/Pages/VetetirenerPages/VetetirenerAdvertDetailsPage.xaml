@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Pettel.Pages.VetetirenerPages.VetetirenerAdvertDetailsPage" BackgroundColor="White">
+    <ContentPage.Content>
+        <StackLayout Margin="10">
+            <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                <Button x:Name="btnStkInfoVisible" IsEnabled="False" Text="Klinik" Clicked="btnStkInfoVisible_Clicked" TextColor="White" BackgroundColor="Orange" CornerRadius="20"/>
+                <Button x:Name="btnStkTreatmentsVisible" Text="Tedaviler" Clicked="btnStkTreatmentsVisible_Clicked" TextColor="White" BackgroundColor="Orange" CornerRadius="20"/>
+            </StackLayout>
+
+
+            <StackLayout x:Name="stkInfo" Orientation="Vertical">
+                <Label x:Name="lblTitle" HorizontalOptions="Center" TextColor="DarkOrange" FontSize="Title" FontAttributes="Bold"/>
+
+                <Image x:Name="imgAdvertImage"/>
+
+                <Frame BackgroundColor="Orange" Margin="0,5" CornerRadius="20" Padding="5">
+                    <StackLayout Orientation="Vertical">
+                        <Label Text="Açıklama : " HorizontalOptions="Center" TextColor="White" FontSize="Medium" FontAttributes="Bold"/>
+                        <Label x:Name="lblExplanation" HorizontalOptions="Center" TextColor="White" FontSize="Medium" FontAttributes="Bold"/>
+                    </StackLayout>
+                </Frame>
+                <Frame BackgroundColor="Orange" Margin="0,5" CornerRadius="20" Padding="5">
+                    <StackLayout Orientation="Vertical">
+                        <StackLayout Orientation="Horizontal">
+                            <StackLayout Orientation="Vertical">
+                                <Label Text="İl : " HorizontalOptions="Center" TextColor="White" FontSize="Medium" FontAttributes="Bold"/>
+                                <Label x:Name="lblProvince" HorizontalOptions="Center" TextColor="White" FontSize="Medium" FontAttributes="Bold"/>
+                            </StackLayout>
+                            <StackLayout Orientation="Vertical">
+                                <Label Text="İlçe : " HorizontalOptions="Center" TextColor="White" FontSize="Medium" FontAttributes="Bold"/>
+                                <Label x:Name="lblDistrict" HorizontalOptions="Center" TextColor="White" FontSize="Medium" FontAttributes="Bold"/>
+                            </StackLayout>
+                        </StackLayout>
+                        <Label Text="Tam Adres : " HorizontalOptions="Center" TextColor="White" FontSize="Medium" FontAttributes="Bold"/>
+                        <Label x:Name="lblFullAddress" HorizontalOptions="Center" TextColor="White" FontSize="Medium" FontAttributes="Bold"/>
+                    </StackLayout>
+                </Frame>
+            </StackLayout>
+
+
+            <StackLayout x:Name="stkTreatments" Orientation="Vertical" IsVisible="false">
+                <Label x:Name="lblMessage" VerticalOptions="Center" HorizontalOptions="Center" TextColor="DarkOrange" FontAttributes="Bold" FontSize="Medium" IsVisible="false"/>
+                <ListView x:Name="lstTreatments" ItemsSource="{Binding treatmentList}" HasUnevenRows="True" IsPullToRefreshEnabled="True">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout Orientation="Horizontal" BackgroundColor="Orange" Margin="5">
+                                    <StackLayout Orientation="Vertical" Padding="5" Margin="5">
+                                        <Label Text="{Binding ClinicalTreatmentType}" FontSize="Medium" TextColor="White"/>
+                                        <StackLayout Orientation="Horizontal" HorizontalOptions="StartAndExpand">
+                                            <Label Text="{Binding Content}" FontSize="Body" TextColor="White"/>
+                                        </StackLayout>
+                                        <Label Text="{Binding Price}" FontSize="Body" TextColor="White" HorizontalOptions="Center" Margin="5"/>
+                                    </StackLayout>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

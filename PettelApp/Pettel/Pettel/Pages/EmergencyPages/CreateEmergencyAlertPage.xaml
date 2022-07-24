@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Pettel.Pages.EmergencyPages.CreateEmergencyAlertPage" BackgroundColor="White">
+    <ContentPage.Content>
+        <StackLayout Margin="10">
+            <Label Text="Acil Durum Bildirisi Oluştur" VerticalOptions="Center" HorizontalOptions="Center" TextColor="DarkOrange"
+               FontSize="Title" FontAttributes="Bold" Margin="10"/>
+
+            <Entry x:Name="txtTitle" Placeholder="Acil Durum Başlığı" TextColor="White" BackgroundColor="Orange" Opacity="0.8" PlaceholderColor="White"/>
+            <Editor x:Name="txtContent" Keyboard="Plain" AutoSize="TextChanges" MaxLength="200" Placeholder="Acil Durumu Özetle" TextColor="White" BackgroundColor="Orange" Opacity="0.8" PlaceholderColor="White"/>
+            <Picker x:Name="pckPetType" Title="Pet Türü" TextColor="White" TitleColor="White" BackgroundColor="Orange" Opacity="0.8" />
+            
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                <Image x:Name="EmergencyAlertImage1" HeightRequest="100" WidthRequest="100" BackgroundColor="Orange" Opacity="0.7">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer x:Name="EmergencyAlertImageTap1" Tapped="EmergencyAlertImageTap1_Tapped"/>
+                    </Image.GestureRecognizers>
+                </Image>
+                <Image x:Name="EmergencyAlertImage2" HeightRequest="100" WidthRequest="100" BackgroundColor="Orange" Opacity="0.7">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer x:Name="EmergencyAlertImageTap2" Tapped="EmergencyAlertImageTap2_Tapped"/>
+                    </Image.GestureRecognizers>
+                </Image>
+                <Image x:Name="EmergencyAlertImage3" HeightRequest="100" WidthRequest="100" BackgroundColor="Orange" Opacity="0.7">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer x:Name="EmergencyAlertImageTap3" Tapped="EmergencyAlertImageTap3_Tapped"/>
+                    </Image.GestureRecognizers>
+                </Image>
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal">
+                <Label Text="İl : " TextColor="Orange"/>
+                <Label x:Name="lblProvince" TextColor="Orange"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="İlçe : " TextColor="Orange"/>
+                <Label x:Name="lblDistrict" TextColor="Orange"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Tam Adres : " TextColor="Orange"/>
+                <Label x:Name="lblFullAddress" TextColor="Orange"/>
+            </StackLayout>
+
+
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Enlem/Boylam : " TextColor="Orange"/>
+                <Label x:Name="lblLatitude" TextColor="Orange"/>
+                <Label x:Name="lblLongitude" TextColor="Orange"/>
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                <Button x:Name="btnSave" Text="Yayınla" Clicked="btnSave_Clicked" BackgroundColor="Orange" TextColor="White" />
+                <Button x:Name="btnMoveTheMap" Text="Konumunu Doğrulamak İçin Tıkla" Clicked="btnMoveTheMap_Clicked" TextColor="White" BackgroundColor="Orange"/>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

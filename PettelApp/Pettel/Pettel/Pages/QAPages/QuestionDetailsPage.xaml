@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Pettel.Pages.QAPages.QuestionDetailsPage" BackgroundColor="White">
+    <ContentPage.Content>
+        <StackLayout Margin="10">
+            <Label x:Name="lblTitle" HorizontalOptions="Center" TextColor="DarkOrange" FontSize="40" FontAttributes="Bold"/>
+
+            <StackLayout x:Name="stkQuestion">
+                <Frame CornerRadius="20" BackgroundColor="Orange">
+                    <StackLayout>
+                        <Label x:Name="lblContent" FontSize="Body" TextColor="White"/>
+
+                        <StackLayout Orientation="Horizontal">
+                            <Label x:Name="lblPetType" FontSize="Body" Margin="0,0,10,0" TextColor="White"/>
+                            <Label x:Name="lblDatetime" FontSize="Body" Margin="10,0,0,0" TextColor="White"/>
+                        </StackLayout>
+                        <Button x:Name="btnAddAnswer" Text="Cevap Ekle" Clicked="btnAddAnswer_Clicked" BackgroundColor="Orange"/>
+                    </StackLayout>
+                </Frame>
+            </StackLayout>
+
+            <Label Text="Cevaplar" FontSize="Body"/>
+            <StackLayout x:Name="stkAnswer">
+                <Label x:Name="lblMessage" VerticalOptions="Center" HorizontalOptions="Center" TextColor="DarkOrange" FontAttributes="Bold" FontSize="Title" IsVisible="false"/>
+                
+                <ListView x:Name="lstAnswer" ItemsSource="{Binding answerList}" HasUnevenRows="True" IsPullToRefreshEnabled="True">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout Orientation="Vertical" BackgroundColor="Orange" Margin="5">
+                                    <Label Text="{Binding Content}" FontSize="Title" TextColor="White"/>
+                                    <StackLayout Orientation="Horizontal" HorizontalOptions="StartAndExpand">
+                                        <Label Text="{Binding EMail}" FontSize="Medium" TextColor="White" HorizontalOptions="Center" Margin="5"/>
+                                        <Label Text="{Binding Datetime}" FontSize="Medium" TextColor="White" HorizontalOptions="End" Margin="5"/>
+                                    </StackLayout>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

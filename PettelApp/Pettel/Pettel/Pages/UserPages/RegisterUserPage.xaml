@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Pettel.Pages.UserPages.RegisterUserPage" BackgroundColor="White">
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="Center" Margin="20">
+            <Label x:Name="lblTitle" Text="Kayıt Ol" TextColor="DarkOrange" FontAttributes="Bold" FontSize="Title" HorizontalOptions="Center"/>
+
+            <Entry x:Name="txtName" Placeholder="Ad"  TextColor="White" PlaceholderColor="White" BackgroundColor="Orange" Opacity="0.8" />
+            <Entry x:Name="txtSurname" Placeholder="Soyad"  TextColor="White" PlaceholderColor="White" BackgroundColor="Orange" Opacity="0.8"/>
+            <Picker x:Name="pckAccountType" SelectedIndexChanged="pckAccountType_SelectedIndexChanged" Title="Hesap Tipi" TextColor="White" TitleColor="White" BackgroundColor="Orange" Opacity="0.8" />
+            <Entry x:Name="txtPhoneNumber" Placeholder="Telefon Numarası" PlaceholderColor="White" TextColor="White" BackgroundColor="Orange" Opacity="0.8" />
+            <Entry x:Name="txtEmail" Placeholder="E-Mail"  TextColor="White" PlaceholderColor="White" BackgroundColor="Orange" Opacity="0.8"/>
+            <Entry x:Name="txtPassword" Placeholder="Parola" IsPassword="True"  TextColor="White" PlaceholderColor="White" BackgroundColor="Orange" Opacity="0.8"/>
+            <Entry x:Name="txtConfirmPassword" Placeholder="Parola Onay" IsPassword="True"  TextColor="White" PlaceholderColor="White" BackgroundColor="Orange" Opacity="0.8"/>
+            
+            <Button x:Name="btnRegister" Text="Kayıt Ol" Clicked="btnRegister_Clicked" TextColor="White" BackgroundColor="DarkOrange" FontAttributes="Bold" CornerRadius="15"/>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

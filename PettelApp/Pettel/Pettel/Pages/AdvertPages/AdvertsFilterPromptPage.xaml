@@ -1,0 +1,31 @@
+﻿<!--<?xml version="1.0" encoding="utf-8" ?>-->
+<popup:PopupPage xmlns:popup="http://rotorgames.com" 
+                 xmlns="http://xamarin.com/schemas/2014/forms"
+                 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                 x:Class="Pettel.Pages.AdvertPages.AdvertsFilterPromptPage"
+                 CloseWhenBackgroundIsClicked="False" BackgroundColor="White">
+    <StackLayout VerticalOptions="Center" BackgroundColor="Orange" Margin="20" Padding="15" HorizontalOptions="CenterAndExpand">
+        <Label Text="Filtreler" VerticalOptions="Center" HorizontalOptions="Center" TextColor="White"
+               FontSize="Title" FontAttributes="Bold"/>
+
+        <StackLayout Orientation="Horizontal">
+            <Picker x:Name="pckPetType"  SelectedIndexChanged="pckPetType_SelectedIndexChanged" TextColor="White" TitleColor="White" WidthRequest="150" Title="Pet Türü" />
+            <Picker x:Name="pckPetBreed" TextColor="White" TitleColor="White" WidthRequest="150" Title="Pet Cinsi"/>
+        </StackLayout>
+
+        <StackLayout Orientation="Horizontal">
+            <Picker x:Name="pckProvince" TextColor="White" TitleColor="White" WidthRequest="150" Title="İl"/>
+            <Picker x:Name="pckDistrict" TextColor="White" TitleColor="White" WidthRequest="150" Title="İlçe"/>
+        </StackLayout>
+
+        <StackLayout Orientation="Horizontal">
+            <Picker x:Name="pckPetSize" TextColor="White" TitleColor="White" WidthRequest="150" Title="Pet Boyutu"/>
+            <Picker x:Name="pckPetGender" TextColor="White" TitleColor="White" WidthRequest="150" Title="Pet Cinsiyeti"/>
+        </StackLayout>
+
+        <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+            <Button x:Name="btnFilterCancel" Text="İptal" BackgroundColor="White" TextColor="Orange" CornerRadius="20" Clicked="btnFilterCancel_Clicked"/>
+            <Button x:Name="btnFilterAccept" Text="Uygula" BackgroundColor="White" TextColor="Orange" CornerRadius="20" Clicked="btnFilterAccept_Clicked"/>
+        </StackLayout>
+    </StackLayout>
+</popup:PopupPage>

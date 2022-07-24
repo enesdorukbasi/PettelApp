@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Pettel.Pages.PetShop.ProductDetailsPage" BackgroundColor="White">
+    <ContentPage.Content>
+        <StackLayout Margin="10" VerticalOptions="Center">
+            <Label x:Name="lblProductName" HorizontalOptions="Center" TextColor="DarkOrange" FontSize="30" FontAttributes="Bold"/>
+
+            <CarouselView x:Name="ProductImages" HeightRequest="200" WidthRequest="200" IndicatorView="IndicatorView">
+                <CarouselView.ItemTemplate>
+                    <DataTemplate>
+                        <Image Source="{Binding Url}" BackgroundColor="Orange" Aspect="Fill"/>
+                    </DataTemplate>
+                </CarouselView.ItemTemplate>
+            </CarouselView>
+            <IndicatorView x:Name="IndicatorView" IndicatorColor="Gray" SelectedIndicatorColor="DarkOrange" IndicatorSize="10" VerticalOptions="Center"/>
+
+            <Frame BackgroundColor="Orange" CornerRadius="30" Padding="10" Margin="0,10,0,0">
+                <StackLayout>
+                    <Label Text="Açıklama : " TextColor="White" FontAttributes="Bold"/>
+                    <Label x:Name="lblExplanation" TextColor="White"/>
+                </StackLayout>
+            </Frame>
+
+            <Frame BackgroundColor="Orange" Margin="0,10,0,0" Padding="10" CornerRadius="30">
+                <StackLayout>
+                    <Label Text="Kategoriler : " TextColor="White" FontAttributes="Bold" FontSize="Medium"/>
+                    <StackLayout Orientation="Horizontal">
+                        <Label x:Name="lblPetType" TextColor="White"/>
+                        <Label Text=" -> " TextColor="White"/>
+                        <Label x:Name="lblMainCategoryName" TextColor="White"/>
+                    </StackLayout>
+                </StackLayout>
+            </Frame>
+
+            <StackLayout Orientation="Horizontal" Margin="0,10,0,0">
+                <Frame BackgroundColor="Orange" CornerRadius="30" Padding="10">
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Adet : " TextColor="White" FontAttributes="Bold"/>
+                        <Label x:Name="lblNumber" TextColor="White"/>
+                    </StackLayout>
+                </Frame>
+                <Frame BackgroundColor="Green" CornerRadius="30" Padding="10">
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Fiyat : " TextColor="White" FontAttributes="Bold"/>
+                        <Label x:Name="lblPrice" TextColor="White"/>
+                    </StackLayout>
+                </Frame>
+            </StackLayout>
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

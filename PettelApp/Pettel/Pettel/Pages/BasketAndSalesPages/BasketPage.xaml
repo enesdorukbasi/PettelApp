@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Pettel.Pages.BasketAndSalesPages.BasketPage" Title="Sepet" BackgroundColor="White">
+    <ContentPage.Content>
+        <StackLayout Margin="10">
+
+            <Label x:Name="lblMessage" VerticalOptions="Center" HorizontalOptions="Center" TextColor="DarkOrange" FontAttributes="Bold" FontSize="Title" IsVisible="false"/>
+
+            <ListView x:Name="lstBasket"  HasUnevenRows="True">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal" BackgroundColor="Orange" Margin="5">
+                                <Frame Padding="0" VerticalOptions="Center" Margin="10" HeightRequest="65" WidthRequest="65" BackgroundColor="Wheat" CornerRadius="200" BorderColor="White" IsClippedToBounds="True">
+                                    <Frame.Content>
+                                        <Image Source="{Binding Image}" Aspect="Fill"/>
+                                    </Frame.Content>
+                                </Frame>
+                                <StackLayout Orientation="Vertical" Padding="5" Margin="5">
+                                    <Label Text="{Binding ProductName}" FontSize="Medium" TextColor="White"/>
+                                    <StackLayout Orientation="Horizontal" HorizontalOptions="StartAndExpand">
+                                        <Label Text="{Binding TotalPrice,StringFormat='{0:C}'}" FontSize="Body" TextColor="White" HorizontalOptions="Center" Margin="5"/>
+                                        <Label Text="{Binding Number}" FontSize="Body" TextColor="White" HorizontalOptions="Center" Margin="5"/>
+                                    </StackLayout>
+                                </StackLayout>
+                                <StackLayout Orientation="Vertical" HorizontalOptions="EndAndExpand">
+                                    <Frame BackgroundColor="Orange" Padding="10" HorizontalOptions="EndAndExpand">
+                                        <Frame.GestureRecognizers>
+                                            <TapGestureRecognizer x:Name="btnDeleteBasketItem" Tapped="btnDeleteBasketItem_Tapped" NumberOfTapsRequired="1" CommandParameter="{Binding Id}"/>
+                                        </Frame.GestureRecognizers>
+                                        <Image Source="delete_basket.png" HorizontalOptions="Center"/>
+                                    </Frame>
+                                    <Frame BackgroundColor="Orange" Padding="10" HorizontalOptions="EndAndExpand">
+                                        <Frame.GestureRecognizers>
+                                            <TapGestureRecognizer x:Name="btnGoDetailsPage" Tapped="btnGoDetailsPage_Tapped" NumberOfTapsRequired="1" CommandParameter="{Binding ProductId}"/>
+                                        </Frame.GestureRecognizers>
+                                        <Image Source="go_page.png" HorizontalOptions="Center"/>
+                                    </Frame>
+                                </StackLayout>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+            <StackLayout Orientation="Horizontal" Margin="0,0,0,10">
+                <Label x:Name="lblTotalPriceTxt" Text="Toplam Tutar : " TextColor="DarkOrange" FontSize="Medium"/>
+                <Label x:Name="lblBasketTotalPrice" TextColor="Green" FontSize="Medium"/>
+            </StackLayout>
+            <Button x:Name="btnAcceptBasket" Text="Sepet Onayla" Clicked="btnAcceptBasket_Clicked" BackgroundColor="DarkOrange" CornerRadius="20" TextColor="White" Margin="0,0,0,10"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

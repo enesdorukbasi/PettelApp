@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Pettel.Pages.QAPages.QAListPage" BackgroundColor="White">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Ara" IconImageSource="search.png" Order="Primary" Priority="0" x:Name="ToolBarItemSearch" Clicked="ToolBarItemSearch_Clicked"/>
+        <ToolbarItem Text="Filtre" IconImageSource="filter.png" Order="Primary" Priority="0" x:Name="ToolBarItemFilter" Clicked="ToolBarItemFilter_Clicked"/>
+        <ToolbarItem Text="Soru Sor" IconImageSource="add_Question.png" Order="Primary" Priority="0" x:Name="btnCreateQuestion" Clicked="btnCreateQuestion_Clicked"/>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <Grid>
+            <StackLayout Orientation="Vertical">
+                <SearchBar x:Name="QuestionSearch" Placeholder="Soru Ara" VerticalOptions="Center" IsVisible="false" TextColor="Orange" PlaceholderColor="Orange" SearchButtonPressed="QuestionSearch_SearchButtonPressed" TextChanged="QuestionSearch_TextChanged"/>
+                <Label x:Name="lblMessage" VerticalOptions="Center" HorizontalOptions="Center" TextColor="DarkOrange" FontAttributes="Bold" FontSize="Title" IsVisible="false"/>
+
+                <ListView x:Name="lstQuestion" ItemsSource="{Binding questionList}" ItemTapped="lstQuestion_ItemTapped" HasUnevenRows="True" IsPullToRefreshEnabled="True">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout Orientation="Vertical" BackgroundColor="Orange" Margin="5">
+                                    <Label Text="{Binding Title}" FontSize="Title" TextColor="White"/>
+                                    <StackLayout Orientation="Horizontal" HorizontalOptions="StartAndExpand">
+                                        <Label Text="{Binding PetType}" FontSize="Medium" TextColor="White" HorizontalOptions="Start" Margin="5"/>
+                                        <Label Text="{Binding Datetime}" FontSize="Medium" TextColor="White" HorizontalOptions="Center" Margin="5"/>
+                                        <Label Text="{Binding Status}" FontSize="Medium" TextColor="White" HorizontalOptions="End" Margin="5"/>
+                                    </StackLayout>
+                                    <Label Text="{Binding EMail}" FontSize="Medium" TextColor="White" Margin="5" HorizontalOptions="Center"/>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

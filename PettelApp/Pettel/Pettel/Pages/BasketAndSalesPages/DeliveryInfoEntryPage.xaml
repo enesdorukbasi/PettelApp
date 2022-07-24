@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Pettel.Pages.BasketAndSalesPages.DeliveryInfoEntryPage" BackgroundColor="White">
+    <ContentPage.Content>
+        <StackLayout Margin="10">
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                <Frame BackgroundColor="Orange" Padding="5" Margin="5" CornerRadius="20">
+                    <Label Text="Teslimat" TextColor="White" VerticalOptions="Center" HorizontalOptions="Center"/>
+                </Frame>
+                <Frame BackgroundColor="DarkOrange" Padding="5" Margin="5">
+                    <Label Text="Ödeme" TextColor="White" VerticalOptions="Center" HorizontalOptions="Center"/>
+                </Frame>
+                <Frame BackgroundColor="DarkOrange" Padding="5" Margin="5">
+                    <Label Text="Özet" TextColor="White" VerticalOptions="Center" HorizontalOptions="Center"/>
+                </Frame>
+            </StackLayout>
+            
+            <Label Text="Teslimat Bilgileri" VerticalOptions="Center" HorizontalOptions="Center" TextColor="DarkOrange" FontAttributes="Bold" FontSize="Title"/>
+
+            <Frame BackgroundColor="DarkOrange" CornerRadius="20">
+                <StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <Picker x:Name="pckAddress" SelectedIndexChanged="pckAddress_SelectedIndexChanged" Title="Tanımlı Adresler" TextColor="White" HorizontalOptions="FillAndExpand" TitleColor="White" BackgroundColor="DarkOrange" Opacity="0.8"/>
+                        <ImageButton x:Name="btnCreateAddress" Clicked="btnCreateAddress_Clicked" Source="add.png" HorizontalOptions="End" WidthRequest="30" HeightRequest="30" BackgroundColor="DarkOrange"/>
+                    </StackLayout>
+
+                    <Line />
+
+                    <Label x:Name="lblTitle" TextColor="White"/>
+                    
+                    <Label x:Name="lblProvince" TextColor="White"/>
+
+                    <Label x:Name="lblDistrict" TextColor="White"/>
+
+                    <Label x:Name="lblFullAddress" TextColor="White"/>
+                </StackLayout>
+            </Frame>
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

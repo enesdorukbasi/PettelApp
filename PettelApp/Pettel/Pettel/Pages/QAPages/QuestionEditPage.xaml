@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Pettel.Pages.QAPages.QuestionEditPage" BackgroundColor="White">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Soru Düzenle" TextColor="DarkOrange" VerticalOptions="Center" HorizontalOptions="Center" FontSize="Title" FontAttributes="Bold"/>
+
+            <Entry x:Name="txtTitle" Placeholder="Başlık" TextColor="White" BackgroundColor="Orange" Opacity="0.8" PlaceholderColor="White"/>
+            <Entry x:Name="txtContent" Placeholder="İçerik" TextColor="White" BackgroundColor="Orange" Opacity="0.8" PlaceholderColor="White"/>
+
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Soru Durumu : "/>
+                <Label x:Name="lblStatus"/>
+                <Switch x:Name="swStatus" Toggled="swStatus_Toggled"/>
+            </StackLayout>
+            <Picker x:Name="pckPetType" Title="Pet Türü" TextColor="White" TitleColor="White" BackgroundColor="Orange" Opacity="0.8" />
+
+            <Button x:Name="btnSave" Text="Paylaş" Clicked="btnSave_Clicked" BackgroundColor="DarkOrange" CornerRadius="20" TextColor="White"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

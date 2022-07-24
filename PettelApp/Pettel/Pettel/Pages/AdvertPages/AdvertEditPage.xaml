@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Pettel.Pages.AdvertPages.AdvertEditPage" BackgroundColor="White">
+    <ContentPage.Content>
+        <StackLayout>
+
+            <Label Text="Pet İlanı Düzenle" TextColor="DarkOrange" VerticalOptions="Center" HorizontalOptions="Center" FontSize="Title" FontAttributes="Bold"/>
+
+            <Label x:Name="lblId" IsVisible="false"/>
+            <Label x:Name="lblImg" IsVisible="false"/>
+            <Label x:Name="lblEmail" IsVisible="false"/>
+            <Entry x:Name="txtTitle" Placeholder="Başlık" TextColor="White" BackgroundColor="Orange" Opacity="0.8" PlaceholderColor="White"/>
+            <Editor x:Name="txtExplanation" Placeholder="Açıklama" AutoSize="TextChanges" Keyboard="Plain" TextColor="White" BackgroundColor="Orange" Opacity="0.8" PlaceholderColor="White"/>
+            <Entry x:Name="txtName" Placeholder="Adı" TextColor="White" BackgroundColor="Orange" Opacity="0.8" PlaceholderColor="White"/>
+
+            <Picker x:Name="pckPetType" SelectedIndexChanged="pckPetType_SelectedIndexChanged" Title="Pet Türü" TextColor="White" TitleColor="White" BackgroundColor="Orange" Opacity="0.8" />
+            <Picker x:Name="pckPetBreed" Title="Pet Cinsi" TextColor="White" TitleColor="White" BackgroundColor="Orange" Opacity="0.8" />
+
+            <Picker x:Name="pckPetGender" Title="Pet Cinsiyeti" TextColor="White" TitleColor="White" BackgroundColor="Orange" Opacity="0.8"/>
+            <Entry x:Name="txtPetAge" Placeholder="Yaş" TextColor="White" PlaceholderColor="White" BackgroundColor="Orange" Opacity="0.8"/>
+            <Picker x:Name="pckPetSize" Title="Pet Boyutu" TextColor="White" TitleColor="White" BackgroundColor="Orange" Opacity="0.8"/>
+
+            <Button x:Name="btnSave" Text="Paylaş" Clicked="btnSave_Clicked" BackgroundColor="DarkOrange" CornerRadius="20" TextColor="White"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

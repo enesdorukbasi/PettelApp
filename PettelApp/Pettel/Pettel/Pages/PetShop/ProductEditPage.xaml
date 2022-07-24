@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Pettel.Pages.PetShop.ProductEditPage" BackgroundColor="White">
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="Center">
+            <Label Text="Ürün Oluştur" TextColor="DarkOrange" VerticalOptions="Center" HorizontalOptions="Center" FontSize="Title" FontAttributes="Bold"/>
+
+            <StackLayout x:Name="StackEntry">
+                <Entry x:Name="txtProductName" Placeholder="Ürün Adı (Bu kısım aramada çıkar.)" TextColor="White" BackgroundColor="Orange" Opacity="0.8" PlaceholderColor="White"/>
+                <Editor x:Name="txtExplanation" Placeholder="Açıklama" Keyboard="Plain" AutoSize="TextChanges" TextColor="White" BackgroundColor="Orange" Opacity="0.8" PlaceholderColor="White"/>
+                <Entry x:Name="txtTags" Placeholder="Etiketler (Bu kısım aramada çıkar.)" TextColor="White" BackgroundColor="Orange" Opacity="0.8" PlaceholderColor="White"/>
+
+                <Entry x:Name="txtPrice" Placeholder="Fiyat" Keyboard="Numeric" TextColor="White" BackgroundColor="Orange" Opacity="0.8" PlaceholderColor="White"/>
+                <Entry x:Name="txtNumber" Placeholder="Adet" Keyboard="Numeric" TextColor="White" BackgroundColor="Orange" Opacity="0.8" PlaceholderColor="White"/>
+
+
+                <Picker x:Name="pckPetType" Title="Pet Türü" TextColor="White" TitleColor="White" BackgroundColor="Orange" Opacity="0.8" />
+                <Picker x:Name="pckMainCategory" Title="Ana Kategori" TextColor="White" TitleColor="White" BackgroundColor="Orange" Opacity="0.8" />
+
+                <Button x:Name="btnNext" Text="İleri" Clicked="btnNext_Clicked" BackgroundColor="DarkOrange" CornerRadius="20" TextColor="White"/>
+            </StackLayout>
+
+
+            <StackLayout x:Name="StackImg" IsVisible="false" >
+                <StackLayout Orientation="Horizontal" Margin="5" HorizontalOptions="Center">
+                    <Image x:Name="ProductImage1" HeightRequest="150" WidthRequest="150" BackgroundColor="Orange" Opacity="0.7">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer x:Name="ProductImageTap1" Tapped="ProductImageTap1_Tapped"/>
+                        </Image.GestureRecognizers>
+                    </Image>
+                    <Image x:Name="ProductImage2" HeightRequest="150" WidthRequest="150" BackgroundColor="Orange" Opacity="0.7">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer x:Name="ProductImageTap2" Tapped="ProductImageTap2_Tapped"/>
+                        </Image.GestureRecognizers>
+                    </Image>
+                </StackLayout>
+                <Image x:Name="ProductImage3" HeightRequest="150" WidthRequest="150" HorizontalOptions="Center" BackgroundColor="Orange" Opacity="0.7">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer x:Name="ProductImageTap3" Tapped="ProductImageTap3_Tapped"/>
+                    </Image.GestureRecognizers>
+                </Image>
+
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Margin="10">
+                    <Button x:Name="btnPrev" Text="Geri" Clicked="btnPrev_Clicked" BackgroundColor="DarkOrange" CornerRadius="20" TextColor="White"/>
+                    <Button x:Name="btnSave" Text="Paylaş" Clicked="btnSave_Clicked" BackgroundColor="DarkOrange" CornerRadius="20" TextColor="White"/>
+                </StackLayout>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
